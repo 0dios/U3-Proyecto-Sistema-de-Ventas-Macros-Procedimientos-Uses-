@@ -1,0 +1,5 @@
+BOR-001,5.15,65,Borrador
+LAP-001,10.00,46,Lapiz
+PLU-001,12.50,58,Pluma
+LIB-001,32.00,78,Libreta
+CAR-001,15.00,34,Cartulina

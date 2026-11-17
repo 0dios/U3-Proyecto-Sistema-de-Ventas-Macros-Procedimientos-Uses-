@@ -1,0 +1,69 @@
+TENER INSTALADA LA LIBRERÍA DE IRVINE32
+
+INSTRUCCIONES DE COMPILACION
+1. Se abre el archivo .sln con Visual Studio.
+2. En la barra superior seleccionar la plataforma x86.
+3. Si el proyecto no reconoce Irvine32, se configura una sola vez:
+   a. Clic derecho en el proyecto > Dependencias de compilacion >
+      Personalizaciones de compilacion > marca "masm".
+   b. Clic derecho en el proyecto > Propiedades:
+      - Microsoft Macro Assembler > General > Include Paths: C:\Irvine
+      - Vinculador > General > Directorios de bibliotecas adicionales: C:\Irvine
+      - Vinculador > Entrada > Dependencias adicionales: agregar irvine32.lib;
+      - Vinculador > Sistema > Subsistema: Consola
+4. Compila con Compilar > Compilar solucion.
+
+
+INSTRUCCIONES DE EJECUCION
+
+1. Al darle a ejecutar. Aparece el menu:
+      1. Alta de producto
+      2. Mostrar inventario
+      3. Buscar producto por codigo
+      4. Recibir mercancia de un producto
+      5. Realizar venta de producto
+      6. Mostrar resumen
+      7. Guardar catalogo
+      8. Cargar un archivo de catalogo
+      9. Salir
+
+   Se escribe el numero de la opción con un solo caracter y presiona Enter.
+   Cualquier otro texto se rechaza y el menu vuelve a aparecer.
+
+2. Dar de alta un producto (opcion 1). El programa pide en este orden:
+   - Nombre: de 1 a 25 caracteres. Ejemplo: Libreta
+
+   - Codigo: 3 letras mayusculas, guion y 3 digitos. Ejemplo: LIB-001
+   - Precio en pesos: entero o con 1 o 2 decimales, de 0.01 a 9999.99, sin $ ni comas. Ejemplo: 45.50
+   - Existencia: entero de 0 a 100. Ejemplo: 20
+
+   Si todo es valido se muestra como "Procedimiento exitoso." y muestra el inventario.
+   Se rechaza si un dato es invalido, si el codigo ya existe o si ya hay 10 productos. 
+   Tambien si la existencia es menor que 10 aparece una alerta.
+
+3. Mostrar inventario (opcion 2). Muestra cada producto en una linea como
+   codigo, nombre, existencia y precio en MXN.
+
+4. Buscar un producto (opcion 3). Se escribe el codigo, por ejemplo LIB-001.
+
+5. Recibir mercancia (opcion 4). Se escribe el codigo y la cantidad a sumar.
+   La cantidad debe ser mayor que 0 y la existencia final no puede pasar
+   de 100.
+
+6. Realizar una venta (opcion 5). Se escribe el codigo y la cantidad a vender.
+   La cantidad debe ser mayor que 0 y no mayor que la existencia.
+   Muestra el importe de la venta y descuenta las unidades.
+   Si quedan menos de 10 unidades aparece la alerta.
+
+7. Ver el resumen (opcion 6). Se muestran las unidades disponibles, el valor
+   total del inventario y los ingresos acumulados de la sesion.
+
+8. Guardar (opcion 7). Se crea o reemplaza Catalogo.txt en la carpeta del
+   proyecto.
+
+9. Cargar (opcion 8). Se lee Catalogo.txt de la carpeta del proyecto. Solo
+   reemplaza el catalogo actual si todo el archivo es valido, si este no existe
+   o esta dañado, avisa y el catalogo no se cambia.
+
+10. Salir (opcion 9). Si hay cambios sin guardar, pregunta si deseas salir con
+    1 = si, 2 = regresar al menu.
